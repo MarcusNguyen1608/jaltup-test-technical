@@ -30,7 +30,7 @@ export function DropZone({ boxName, setBoxName, variant, boxValue }: DropZonePro
   return (
     <div
       ref={drop}
-      className={`bg-background p-10 rounded-3xl hover: border-dashed  min-h-[288px] ${variant==='small'?'min-w-[288px]': 'min-w-[546px]'}`}
+      className={`bg-background p-10 rounded-3xl border-dashed hover:border-[1px] border-black min-h-[288px] ${variant==='small'?'min-w-[288px]': 'min-w-[546px]'}`}
     >
       {boxName===boxValue && (
         <Widget

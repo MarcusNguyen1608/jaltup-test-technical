@@ -12,13 +12,13 @@ function App() {
         <DropZone
           variant="small"
           boxName="box1"
-          setBoxName={(value) => setBoxValue(value)}
+          setBoxName={setBoxValue}
           boxValue={boxValue}
         />
         <DropZone
           variant="large"
           boxName="box2"
-          setBoxName={(value) => setBoxValue(value)}
+          setBoxName={setBoxValue}
           boxValue={boxValue}
         />
       </div>
