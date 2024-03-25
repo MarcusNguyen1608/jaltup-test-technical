@@ -49,7 +49,7 @@ export function Widget({
         </div>
         <Button className="mt-auto">{contentButton}</Button>
       </div>
-      {variant !== "small" && (
+      {variant === "large" && (
         <div className="grid grid-cols-2 gap-4 w-52">
           {images.map((image) => (
             <img

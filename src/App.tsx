@@ -11,13 +11,15 @@ function App() {
       <div className="flex flex-col gap-12 lg:flex-row">
         <DropZone
           variant="small"
-          isHasData={boxValue === "box1"}
-          setValue={() => setBoxValue("box1")}
+          boxName="box1"
+          setBoxName={(value) => setBoxValue(value)}
+          boxValue={boxValue}
         />
         <DropZone
           variant="large"
-          isHasData={boxValue === "box2"}
-          setValue={() => setBoxValue("box2")}
+          boxName="box2"
+          setBoxName={(value) => setBoxValue(value)}
+          boxValue={boxValue}
         />
       </div>
       {boxValue === null && (

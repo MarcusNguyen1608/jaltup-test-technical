@@ -1,27 +1,25 @@
 import { useDrop } from "react-dnd";
 import { Widget } from "./Widget";
 import FacebookIcon from "@/assets/facebook.svg";
-import { useState } from "react";
 
 interface DropZoneProps {
   children?: React.ReactNode;
   isHasData?: boolean;
-  setValue: () => void;
+  setBoxName: (boxName:string) => void;
   variant: "small" | "large";
+  boxName:string
+  boxValue: string | null;
 }
 
 export const ItemTypes = {
   BOX: "box",
 };
 
-export function DropZone({ isHasData, setValue, variant }: DropZoneProps) {
-  const [boxName, setBoxName] = useState<string | null>(null);
-
+export function DropZone({ boxName, setBoxName, variant, boxValue }: DropZoneProps) {
   const [, drop] = useDrop(() => ({
     accept: ItemTypes.BOX,
-    drop: (item: { name: string }) => {
-      setBoxName(item.name);
-      setValue();
+    drop: () => {
+      setBoxName(boxName);
     },
     collect: (monitor) => ({
       isOver: monitor.isOver(),
@@ -34,7 +32,7 @@ export function DropZone({ isHasData, setValue, variant }: DropZoneProps) {
       ref={drop}
       className={`bg-background p-10 rounded-3xl hover: border-dashed  min-h-[288px] ${variant==='small'?'min-w-[288px]': 'min-w-[546px]'}`}
     >
-      {isHasData && boxName && (
+      {boxName===boxValue && (
         <Widget
           variant={variant}
           contentButton="Follow 6.5k"
