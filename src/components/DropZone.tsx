@@ -32,7 +32,7 @@ export function DropZone({ isHasData, setValue, variant }: DropZoneProps) {
   return (
     <div
       ref={drop}
-      className={`bg-background p-10 rounded-3xl hover: border-dashed min-w-[288px] min-h-[288px]`}
+      className={`bg-background p-10 rounded-3xl hover: border-dashed  min-h-[288px] ${variant==='small'?'min-w-[288px]': 'min-w-[546px]'}`}
     >
       {isHasData && boxName && (
         <Widget
