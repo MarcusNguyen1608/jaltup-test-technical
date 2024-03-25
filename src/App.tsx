@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="h-screen w-screen flex items-center justify-center gap-12 flex-col">
-      <div className="flex flex-col gap-12 lg:flex-row">
+      <div className="flex flex-col gap-12 lg:flex-row items-center">
         <DropZone
           variant="small"
           boxName="box1"
