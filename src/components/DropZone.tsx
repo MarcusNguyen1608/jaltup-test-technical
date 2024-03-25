@@ -16,7 +16,6 @@ export const ItemTypes = {
 
 export function DropZone({ isHasData, setValue, variant }: DropZoneProps) {
   const [boxName, setBoxName] = useState<string | null>(null);
-  console.log("🚀 ~ DropZone ~ boxName:", boxName);
 
   const [, drop] = useDrop(() => ({
     accept: ItemTypes.BOX,
